@@ -1,0 +1,35 @@
+﻿Text_ID,Mobile_Tech_Flag_Actual,Mobile_Tech_Flag_Predicted,Brands_Entity_Actual,Sentiment_Actual,Brands_Entity_Identified,Sentiment_Identified
+article_345678,1,1,,,,
+article_345679,1,1,,,,
+article_345680,1,0,,,,
+article_345681,1,0,,,,
+article_345682,1,1,,,,
+article_345683,1,0,,,,
+article_345684,1,0,,,,
+article_345685,0,0,,,,
+article_345686,0,0,,,,
+article_345687,0,1,,,,
+article_345688,0,0,,,,
+article_345689,0,0,,,,
+article_345690,0,1,,,,
+article_345691,1,1,Xiaomi,positive,MI,positive
+article_345691,1,1,Redmi,positive,Xiaomi,negative
+article_345691,1,1,Xiaomi,positive,Redmi,positive
+article_345692,0,1,,,,
+tweet_645321,1,1,Xiaomi,positive,Xiaomi,positive
+tweet_645322,1,1,iQOO,negative,iQOO,negative
+tweet_645323,1,1,Samsung,neutral,Samsung,negative
+tweet_645324,1,0,,,,
+tweet_645325,1,1,Xiaomi,neutral,Xi,neutral
+tweet_645326,1,1,Nokia 3.4,positive,Moto,positive
+tweet_645326,1,1,Moto E7 Power,negative,Nokia,negative
+tweet_645327,1,0,,,,
+tweet_645328,1,1,Nokia,negative,Nokia,negative
+tweet_645329,1,1,Xiaomi,positive,Xiaomi,positive
+tweet_645330,1,1,Mi,positive,Xi,positive
+tweet_645330,1,1,Xiaomi,positive,Mi,positive
+tweet_645331,0,0,,,,
+tweet_645332,0,0,,,,
+tweet_645333,1,1,Motorola,negative,Moto,positive
+tweet_645334,1,0,,,,
+tweet_645335,1,1,Oppo,positive,Oppo,positive
