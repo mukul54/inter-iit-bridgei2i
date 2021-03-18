@@ -32,7 +32,7 @@ for i in range(len(query)):
     auth.set_access_token(access_key, access_secret)
     api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
     # Change the 180 to any number; note that you will have to wait if the rate limit is exceeded
-    cursor = tweepy.Cursor(api.search, q=random.choice(query), tweet_mode='extended', lang=LANGUAGE)
+    cursor = tweepy.Cursor(api.search, q=query[i], tweet_mode='extended', lang=LANGUAGE)
     tweets = [x._json for x in cursor.items(180)]
     tweets = [tweet['full_text'] for tweet in tweets]
     tweets_df = pd.DataFrame(tweets, columns=[COL_NAME])
