@@ -38,9 +38,22 @@ def clear_punk(text):
  '∙', '）', '↓', '、', '│', '（', '»', '，', '♪', '╩', '╚', '³', '・', '╦', '╣', '╔', '╗', '▬', '❤', 'ï', 'Ø', '¹', '≤', '‡', '√', ]
     for p in punct_mapping:
         text = text.replace(p, punct_mapping[p])
-    pat = re.compile("|".join(map(re.escape, punct)))
-    text = re.sub(pat, r"\1 ", text);
+    for p in punct:
+        text = text.replace(p,' '+p)
     return text
+def hashtag_seg(tweet):
+  # segmenter using the word statistics from Twitter
+    seg_tw = Segmenter(corpus="twitter",)
+    tweet_lst = tweet.split(' ')
+    new_tweet_lst = []
+    for word in tweet_lst:
+        if word[0] == '#':
+            word = re.sub(r'#','', word)
+            word = seg_tw.segment(word)
+        new_tweet_lst.append(word)
+  
+    tweet = ' '.join(new_tweet_lst)
+    return tweet
 def tokenizer(tweet):
   # add space before and after
     tweet = re.sub(r' +', ' ', tweet)
