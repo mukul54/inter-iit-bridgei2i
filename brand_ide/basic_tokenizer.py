@@ -31,7 +31,7 @@ def clear_punk(text):
     punct_mapping = {"‘": "'", "₹": "e", "´": "'", "°": "", "€": "e", "™": "tm", "√": " sqrt ", "×": "x", "²": "2", "—": "-", "–": "-", "’": "'", "_": "-",
                  "`": "'", '“': '"', '”': '"', '“': '"', "£": "e", '∞': 'infinity', 'θ': 'theta', '÷': '/', 'α': 'alpha', '•': '.', 'à': 'a', '−': '-', 
                  'β': 'beta', '∅': '', '³': '3', 'π': 'pi', '!':' '}
-    punct = [',', '.', '"', ':', ')', '(', '-', '!', '?', '|', ';', "'", '$', '&', '/', '[', ']', '>', '%', '=', '#', '*', '+', '\\', '•',  '~', '@', '£', 
+    punct = ['@','#',',', '.', '"', ':', ')', '(', '-', '!', '?', '|', ';', "'", '$', '&', '/', '[', ']', '>', '%', '=', '#', '*', '+', '\\', '•',  '~', '@', '£', 
  '·', '_', '{', '}', '©', '^', '®', '`',  '<', '→', '°', '€', '™', '›',  '♥', '←', '×', '§', '″', '′', 'Â', '█', '½', 'à', '…', 
  '“', '★', '”', '–', '●', 'â', '►', '−', '¢', '²', '¬', '░', '¶', '↑', '±', '¿', '▾', '═', '¦', '║', '―', '¥', '▓', '—', '‹', '─', 
  '▒', '：', '¼', '⊕', '▼', '▪', '†', '■', '’', '▀', '¨', '▄', '♫', '☆', 'é', '¯', '♦', '¤', '▲', 'è', '¸', '¾', 'Ã', '⋅', '‘', '∞', 
@@ -39,7 +39,7 @@ def clear_punk(text):
     for p in punct_mapping:
         text = text.replace(p, punct_mapping[p])
     for p in punct:
-        text = text.replace(p,' '+p)
+        text = text.replace(p,' '+p+' ')
     return text
 def hashtag_seg(tweet):
   # segmenter using the word statistics from Twitter
@@ -48,7 +48,7 @@ def hashtag_seg(tweet):
     new_tweet_lst = []
     for word in tweet_lst:
         if word[0] == '#':
-            word = re.sub(r'#','', word)
+            word = re.sub(r'#',' ', word)
             word = seg_tw.segment(word)
         new_tweet_lst.append(word)
   
@@ -56,13 +56,15 @@ def hashtag_seg(tweet):
     return tweet
 def tokenizer(tweet):
   # add space before and after
+    tweet = remove_urls(tweet)
+#     tweet = re.sub(r'@[A-Za-z0-9]+', '', tweet)
     tweet = re.sub(r' +', ' ', tweet)
     tweet = re.sub( r"RT ", r" ", tweet)
     tweet = re.sub( r"QT ", r" ", tweet)
     tweet = ' '+tweet+' '
   
   # URL
-    tweet = remove_urls(tweet)
+    
   # replace \n with ' '
     tweet = re.sub( r"\n", r" ", tweet)
     tweet = tweet.lower()
@@ -70,6 +72,7 @@ def tokenizer(tweet):
     tweet = contraction_mapping(tweet)
 
     tweet = clear_punk(tweet)
+#     tweet = re.sub(r'#', r'',tweet)
     tweet = re.sub(r' +', ' ', tweet)
   # remove excess space
     
