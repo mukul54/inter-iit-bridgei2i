@@ -5,7 +5,7 @@ import time
 import copy
 
 # enter your search query here
-LANGUAGE = 'hi'
+LANGUAGE = 'en'
 #Query list
 query = [' BlackBerry Limited ', ' Honor ', ' Huawei ', ' OnePlus ', ' Oppo ', ' Realme ', ' Tecno ', ' Vivo ',  ' Xiaomi ', ' Zopo ', ' Verzo ',' Nokia ', ' Lenovo ', ' Karbonn Mobiles ', ' Lava ', ' HCL Technologies ', ' Jio ', ' LYF ', ' Micromax ', ' Spice ', ' Videocon ', ' Xolo ', ' Sony ', ' QMobile ',  ' LG ', ' Samsung ',' Acer ', ' Asus ', ' HTC ', 'Ericsson ', ' Apple ',  ' Google ', ' HP ', ' Motorola ']
 for i in range(len(query)):
