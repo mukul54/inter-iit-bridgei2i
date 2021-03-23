@@ -86,8 +86,8 @@ In this task, a summary of a given article/document is generated when passed thr
 Here we will be generating ***Abstractive Summary***. 
 
 - **Data**:
-	- We are using the News Summary dataset available at [Kaggle](https://www.kaggle.com/sunnysai12345/news-summary)
-	- This dataset is the collection created from Newspapers published in India. We also have scrapped mobile tech articles from
+    - We are using the News Summary dataset available at [Kaggle](https://www.kaggle.com/sunnysai12345/news-summary)
+    - This dataset is the collection created from Newspapers published in India. We also have scrapped mobile tech articles from
 https://gadgets.ndtv.com/mobiles with headlines.
 
 
@@ -98,7 +98,18 @@ https://gadgets.ndtv.com/mobiles with headlines.
     - **Text-2-Text** - According to the graphic taken from the T5 paper. All NLP tasks are converted to a **text-to-text** problem. Tasks such as translation, classification, summarization and question answering, all of them are treated as a text-to-text conversion problem, rather than seen as separate unique problem statements.
 
 ## 2. File Structure: How to run?
-**USAGE**:
+
+### USAGE: Transliteration and Translation
+In order to translate a text you need to follow the following mentioned steps:
+- `cd Submission`
+- change the `PATH` variable in the `__name__ == "__main__"` block of the `language_convert.py`
+- coloumn name of the text to be converted should be `Text`.
+- `python language_detection.py` 
+### USAGE: Text Classification
+This model have directly been trained and evaluated in [final notebook](https://github.com/mukul54/inter-iit-bridgei2i/blob/main/notebooks/i2isubmission.ipynb).
+### Brand Identification
+This model have directly been trained and evaluated in [final notebook](https://github.com/mukul54/inter-iit-bridgei2i/blob/main/notebooks/i2isubmission.ipynb).
+### USAGE: Aspect Based Sentiment Analysis
 Spacy and Language models installation:
 
     pip install spacy
@@ -116,5 +127,27 @@ Infer with:
     python3 infer.py
 
 ## 3. Contributions
+1. We developed an **end-to-end, scalable and unique pipeline for the identification,
+summarization and entity based sentiment analysis** of the tweets and articles.
+2. We trained the character based transliteration model from scratch for the conversion of code-mix language (Hindi+English for our case) to the pure language(Hindi for our case), which is **highly scalable, reliable and fast** (our model is twice as fast as Google’s API) that can be scaled to any other code-mix language as well.
+3. We developed a unique dictionary based approach for the brand identification.
+4. We finetuned a transformer based model forheadline generation and used a  GCN based model for Aspect Based Sentiment Analysis.
+5. We developed different datasets by scrapping from various news sources and twitter and then cleaned and preprocessed them for training the models on different tasks.
+6. Our preprocessing pipelines consist of a unique graph based clustering algorithm
+for the identification of duplicate examples based on Levenshtein distance.
+
 ## 4. Future Prospects
-## 5. Acknowledgements
+- The translation part of the pipeline can be scaled to multiple code-mixed language.
+- Since it was mentioned that in case of various models of a brand, we need to identify then only if they apperar with their brand name, for example galaxy need to be identified as brand only if it is mentioned in the text with Samsung, so We can develop a model to learn the reverse mapping between brand and model automatically with availability of more data.
+- We availability of more data the pipeline can be scaled to other domain like fashion, transport as welll.
+- The entire pipeline can be deployed for commercial use.
+
+## 5. Acknowledgements and References
+For different part of the pipeline we have used various open source libraries, datasets and availabe codebase. We are thanksful to the authors of those libraries codebases and datasets.
+- [ASGCN Codebase](https://github.com/GeneZC/ASGCN)
+- [ASGCN Paper](https://arxiv.org/abs/1909.03477)
+- [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer](https://arxiv.org/abs/1910.10683)
+- [T5 Hugging face transformer](https://huggingface.co/transformers/model_doc/t5.html)
+- [News Summary Dataset Kaggle](https://www.kaggle.com/sunnysai12345/news-summary)
+- [MarianMT](https://huggingface.co/transformers/model_doc/marian.html)
+- [Pytorch](https://pytorch.org/)
