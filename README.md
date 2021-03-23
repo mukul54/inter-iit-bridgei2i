@@ -66,10 +66,55 @@ For the classification of the input data into tech and non-tech, we used a stack
 In order to help the model learn the given data distribution and generalize to newer out-of-distribution examples as well, 80% of the given data was concatenated with the scraped dataset, and we used this combined data for training.
 
 ### 1.5  Brand Identification & Aspect based sentiment analysis
-### 1.6  Heading generation
+For brand identification of mobile tech tweets and articles, we are using a dictionary-based approach and the accuracy can
+further, be increased by using a transformer for NER (Named Entity Recognition).
 
+For aspect based sentiment analysis , a transformer based model is used for feature extraction which is further fed into a GRU model to get sentiment of each word of the sentence. Finally we will cherry-pick the sentiments of the brands.
+
+Due to their inherent capability in semantic alignment of aspects and their context words, attention mechanism and Convolutional Neural Networks (CNNs) are widely applied for aspect-based sentiment classification. However, these models lack a mechanism to account for relevant syntactical constraints and long-range word dependencies, and hence may mistakenly recognize syntactically irrelevant contextual words as clues for judging aspect sentiment. To tackle this problem, we are using a [Graph Convolutional Network (GCN)](https://arxiv.org/abs/1909.03477) over the dependency tree of a sentence to exploit syntactical information and word
+dependencies. Based on it, an aspect specific sentiment classification framework is raised.
+
+
+
+
+### 1.6  Heading generation
+In this task, a summary of a given article/document is generated when passed through a network. There are 2 types of summary generation mechanisms:
+
+1. ***Extractive Summary:*** the network calculates the most important sentences from the article and gets them together to provide the most meaningful information from the article.
+2. ***Abstractive Summary***: The network creates new sentences to encapsulate the maximum gist of the article and generates that as output. The sentences in the summary may or may not be contained in the article. 
+
+Here we will be generating ***Abstractive Summary***. 
+
+- **Data**:
+	- We are using the News Summary dataset available at [Kaggle](https://www.kaggle.com/sunnysai12345/news-summary)
+	- This dataset is the collection created from Newspapers published in India. We also have scrapped mobile tech articles from
+https://gadgets.ndtv.com/mobiles with headlines.
+
+
+
+- **Language Model Used**: 
+    - This notebook uses one of the most recent and novel transformers model ***T5***. [Research Paper](https://arxiv.org/abs/1910.10683)    
+    - ***T5*** in many ways is one of its kind transformers architecture that not only gives state of the art results in many NLP tasks, but also has a very radical approach to NLP tasks.
+    - **Text-2-Text** - According to the graphic taken from the T5 paper. All NLP tasks are converted to a **text-to-text** problem. Tasks such as translation, classification, summarization and question answering, all of them are treated as a text-to-text conversion problem, rather than seen as separate unique problem statements.
 
 ## 2. File Structure: How to run?
+**USAGE**:
+Spacy and Language models installation:
+
+    pip install spacy
+    python3 -m spacy download en
+If graph and tree files don't exist in the dataset,then graph and tree data are generated with:
+
+    python3 dependency_tree.py
+    python3 dependency_graph.py
+
+Trained with:
+
+    python train.py --model_name asgcn --dataset rest14 --save True
+Infer with:
+
+    python3 infer.py
+
 ## 3. Contributions
 ## 4. Future Prospects
 ## 5. Acknowledgements
