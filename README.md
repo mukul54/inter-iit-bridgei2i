@@ -101,10 +101,10 @@ https://gadgets.ndtv.com/mobiles with headlines.
 
 ### USAGE: Transliteration and Translation
 In order to translate a text you need to follow the following mentioned steps:
-- `cd Submission`
+- `cd submission`
 - change the `PATH` variable in the `__name__ == "__main__"` block of the `language_convert.py`
 - coloumn name of the text to be converted should be `Text`.
-- `python language_detection.py` 
+- `python language_convert.py` 
 ### USAGE: Text Classification
 This model have directly been trained and evaluated in [final notebook](https://github.com/mukul54/inter-iit-bridgei2i/blob/main/notebooks/i2isubmission.ipynb).
 ### Brand Identification
