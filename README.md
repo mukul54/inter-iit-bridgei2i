@@ -114,11 +114,11 @@ Spacy and Language models installation:
 
     pip install spacy
     python3 -m spacy download en
+Download pretrained GloVe embeddings with this [link](http://nlp.stanford.edu/data/wordvecs/glove.840B.300d.zip) and extract `glove.840B.300d.txt` into `glove/`.<br />
 If graph and tree files don't exist in the dataset,then graph and tree data are generated with:
 
     python3 dependency_tree.py
     python3 dependency_graph.py
-
 Trained with:
 
     python train.py --model_name asgcn --dataset rest14 --save True
