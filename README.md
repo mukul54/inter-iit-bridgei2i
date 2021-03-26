@@ -121,7 +121,7 @@ If graph and tree files don't exist in the dataset,then graph and tree data are 
     python3 dependency_graph.py
 Trained with:
 
-    python train.py --model_name asgcn --dataset rest14 --save True
+    python train.py --model_name asgcn --dataset interiit --save True
 Infer with:
 
     python3 infer.py
