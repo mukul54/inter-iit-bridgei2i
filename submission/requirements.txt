@@ -120,7 +120,7 @@ tqdm==4.59.0
 traitlets @ file:///home/ktietz/src/ci/traitlets_1611929699868/work
 typer==0.3.2
 typing-extensions==3.7.4.3
-urllib3==1.26.4
+urllib3==1.26.5
 wandb==0.10.23
 wasabi==0.8.2
 wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
