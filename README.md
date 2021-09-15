@@ -106,9 +106,9 @@ In order to translate a text you need to follow the following mentioned steps:
 - coloumn name of the text to be converted should be `Text`.
 - `python language_convert.py` 
 ### USAGE: Text Classification
-This model have directly been trained and evaluated in [final notebook](https://github.com/mukul54/inter-iit-bridgei2i/blob/main/notebooks/i2isubmission.ipynb).
+This model have directly been trained and evaluated in [final notebook](https://github.com/mukul54/inter-iit-bridgei2i/blob/main/notebooks/i2i_submission.ipynb).
 ### Brand Identification
-This model have directly been trained and evaluated in [final notebook](https://github.com/mukul54/inter-iit-bridgei2i/blob/main/notebooks/i2isubmission.ipynb).
+This model have directly been trained and evaluated in [final notebook](https://github.com/mukul54/inter-iit-bridgei2i/blob/main/notebooks/i2i_submission.ipynb).
 ### USAGE: Aspect Based Sentiment Analysis
 Spacy and Language models installation:
 
