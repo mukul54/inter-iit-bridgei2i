@@ -52,7 +52,7 @@ mkl-service==2.3.0
 murmurhash==1.0.5
 networkx==2.5
 nltk==3.5
-numpy==1.20.1
+numpy==1.22.0
 oauthlib==3.1.0
 olefile==0.46
 openpyxl==3.0.7
