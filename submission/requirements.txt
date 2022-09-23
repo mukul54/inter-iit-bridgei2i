@@ -68,7 +68,7 @@ pluggy==0.13.1
 preshed==3.0.5
 promise==2.3
 prompt-toolkit==3.0.18
-protobuf==3.15.6
+protobuf==3.18.3
 psutil==5.8.0
 ptyprocess @ file:///tmp/build/80754af9/ptyprocess_1609355006118/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl
 py==1.10.0
