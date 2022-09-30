@@ -36,7 +36,7 @@ ipython @ file:///home/conda/feedstock_root/build_artifacts/ipython_161439357375
 ipython-genutils @ file:///tmp/build/80754af9/ipython_genutils_1606773439826/work
 jedi @ file:///tmp/build/80754af9/jedi_1611333125342/work
 Jinja2==2.11.3
-joblib==1.0.1
+joblib==1.2.0
 jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1601311786391/work
 jupyter-core @ file:///tmp/build/80754af9/jupyter_core_1612213311222/work
 kiwisolver==1.3.1
